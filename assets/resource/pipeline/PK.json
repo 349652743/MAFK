@@ -1,0 +1,120 @@
+{
+    "PK": {
+        "next": [
+            "PKGameplayCatalog"
+        ],
+        "interrupt": [
+            "StartUp"
+        ]
+    },
+    "PKGameplayCatalog": {
+        "recognition": "TemplateMatch",
+        "template": "MiMeng/GameplayCatalog.png",
+        "action": "Click",
+        "next": [
+            "PKBtn"
+        ]
+    },
+    "PKBtn": {
+        "recognition": "OCR",
+        "expected": [
+            "竞技场"
+        ],
+        "action": "Click",
+        "next": [
+            "PKBattleOver",
+            "PKBattle",
+            "ClosePKPage"
+        ]
+    },
+    "ClosePKPage": {
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭",
+            "点击屏幕退出",
+            "点击屏幕恢复"
+        ],
+        "action": "Click",
+        "next": [
+            "PKBattleOver",
+            "PKBattle"
+        ]
+    },
+    "PKBattle": {
+        "recognition": "OCR",
+        "expected": [
+            "开始挑战",
+            "继续挑战"
+        ],
+        "pre_delay": 1000,
+        "post_delay": 1000,
+        "action": "Click",
+        "next": [
+            "SelectPlayer",
+            "CancelBattleBtn"
+        ]
+    },
+    "CancelBattleBtn": {
+        "recognition": "TemplateMatch",
+        "template": "PK/CancelBtn.png",
+        "action": "Click",
+        "next": [
+            "PKAward",
+            "StartUp"
+        ]
+    },
+    "SelectPlayer": {
+        "recognition": "TemplateMatch",
+        "template": "PK/SelectPlayer.png",
+        "action": "Click",
+        "next": [
+            "StartPKBattle"
+        ]
+    },
+    "StartPKBattle": {
+        "recognition": "OCR",
+        "expected": [
+            "战斗"
+        ],
+        "action": "Click",
+        "next": [
+            "InPKBattle"
+        ]
+    },
+    "InPKBattle": {
+        "recognition": "TemplateMatch",
+        "template": "PK/InPKBattle.png",
+        "next": [
+            "PKBattleOver",
+            "InPKBattle"
+        ]
+    },
+    "PKBattleOver": {
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭"
+        ],
+        "action": "Click",
+        "next": [
+            "PKBattleOver",
+            "PKBattle",
+            "PKOver"
+        ]
+    },
+    "PKAward": {
+        "recognition": "TemplateMatch",
+        "template": "PK/PKAward.png",
+        "action": "Click",
+        "next": [
+            "StartUp"
+        ]
+    },
+    "PKOver": {
+        "recognition": "TemplateMatch",
+        "template": "PK/PKOver.png",
+        "next": [
+            "PKAward",
+            "StartUp"
+        ]
+    }
+}

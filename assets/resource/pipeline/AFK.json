@@ -1,0 +1,69 @@
+{
+    "AFK": {
+        "next": [
+            "AFKBtn"
+        ],
+        "interrupt": [
+            "StartUp"
+        ]
+    },
+    "AFKBtn": {
+        "recognition": "OCR",
+        "expected": [
+            "当前进度",
+            "完成"
+        ],
+        "action": "Click",
+        "next": [
+            "GetAFKAward",
+            "QuickAFKOver",
+            "QuickAFKBtn"
+        ]
+    },
+    "GetAFKAward": {
+        "recognition": "TemplateMatch",
+        "template": "AFK/GetAFKAward.png",
+        "action": "Click",
+        "next": [
+            "QuickAFKOver",
+            "QuickAFKBtn"
+        ]
+    },
+    "QuickAFKBtn": {
+        "recognition": "TemplateMatch",
+        "template": "AFK/QuickAFKBtn.png",
+        "action": "Click",
+        "next": [
+            "ConfirmBtn"
+        ]
+    },
+    "ConfirmBtn": {
+        "recognition": "TemplateMatch",
+        "template": "AFK/ConfirmBtn.png",
+        "action": "Click",
+        "next": [
+            "QuickAFKOver",
+            "CloseAFKPage"
+        ]
+    },
+    "CloseAFKPage": {
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭",
+            "点击屏幕退出"
+        ],
+        "action": "Click",
+        "next": [
+            "QuickAFKOver",
+            "QuickAFKBtn"
+        ]
+    },
+    "QuickAFKOver": {
+        "recognition": "TemplateMatch",
+        "template": "AFK/QuickAFKOver.png",
+        "threshold": 0.9,
+        "next": [
+            "StartUp"
+        ]
+    }
+}

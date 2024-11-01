@@ -1,0 +1,72 @@
+{
+    "StartUp": {
+        "next": [
+            "HomePage"
+        ],
+        "interrupt": [
+            "EarnRewards",
+            "GotoActivity",
+            "BackBtn",
+            "BackBtn2",
+            "ClosePage",
+            "StartGame",
+            "Loading",
+            "StartAFK"
+        ]
+    },
+    "StartAFK": {
+        "action": "StartApp",
+        "package": "com.lilithgame.igame.android.cn",
+        "post_delay": 3000
+    },
+    "Loading": {
+        "recognition": "TemplateMatch",
+        "template": "StartUp/Loading.png",
+        "post_delay": 3000,
+        "next": [
+            "StartGame"
+        ]
+    },
+    "StartGame": {
+        "recognition": "TemplateMatch",
+        "template": "StartUp/StartGame.png",
+        "action": "Click"
+    },
+    "ClosePage": {
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭",
+            "点击屏幕退出",
+            "点击屏幕恢复"
+        ],
+        "action": "Click"
+    },
+    "EarnRewards": {
+        "recognition": "OCR",
+        "expected": [
+            "领取奖励"
+        ],
+        "action": "Click"
+    },
+    "GotoActivity": {
+        "recognition": "OCR",
+        "expected": [
+            "前往活动查看更多"
+        ],
+        "action": "Click"
+    },
+    "BackBtn": {
+        "recognition": "TemplateMatch",
+        "template": "StartUp/BackBtn.png",
+        "action": "Click"
+    },
+    "BackBtn2": {
+        "recognition": "TemplateMatch",
+        "template": "StartUp/BackBtn2.png",
+        "action": "Click"
+    },
+    "HomePage": {
+        "recognition": "TemplateMatch",
+        "template": "StartUp/HomePage.png"
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "Email": {
+        "next": [
+            "EmailMenuBtn"
+        ],
+        "interrupt": [
+            "StartUp"
+        ]
+    },
+    "EmailMenuBtn": {
+        "recognition": "TemplateMatch",
+        "template": "Friend/MenuBtn.png",
+        "action": "Click",
+        "next": [
+            "EmailBtn"
+        ]
+    },
+    "EmailBtn": {
+        "recognition": "TemplateMatch",
+        "template": "Email/EmailBtn.png",
+        "action": "Click",
+        "threshold": 0.9,
+        "next": [
+            "ReadBtn"
+        ]
+    },
+    "ReadBtn": {
+        "recognition": "OCR",
+        "expected": [
+            "阅读全部"
+        ],
+        "action": "Click",
+        "next": [
+            "StartUp"
+        ]
+    }
+}

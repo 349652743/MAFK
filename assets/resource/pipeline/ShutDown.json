@@ -1,0 +1,6 @@
+{
+    "CloseAFK": {
+        "action": "StopApp",
+        "package": "com.lilithgame.igame.android.cn"
+    }
+}

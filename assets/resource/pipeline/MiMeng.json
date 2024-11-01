@@ -1,0 +1,90 @@
+{
+    "MiMeng": {
+        "next": [
+            "GameplayCatalog"
+        ],
+        "interrupt": [
+            "StartUp"
+        ]
+    },
+    "GameplayCatalog": {
+        "recognition": "TemplateMatch",
+        "template": "MiMeng/GameplayCatalog.png",
+        "action": "Click",
+        "next": [
+            "MiMengZhiYu"
+        ]
+    },
+    "MiMengZhiYu": {
+        "recognition": "OCR",
+        "expected": [
+            "迷梦之域"
+        ],
+        "action": "Click",
+        "next": [
+            "Challenge",
+            "Challenged"
+        ]
+    },
+    "Challenge": {
+        "recognition": "OCR",
+        "expected": [
+            "次数[56]/[678]"
+        ],
+        "action": "Click",
+        "next": [
+            "Battle"
+        ]
+    },
+    "Challenged": {
+        "recognition": "OCR",
+        "expected": [
+            "次数[01234]/[678]"
+        ],
+        "next": [
+            "MiMengAward",
+            "StartUp"
+        ]
+    },
+    "MiMengAward": {
+        "recognition": "TemplateMatch",
+        "template": "MiMeng/MiMengAward.png",
+        "action": "Click",
+        "next": [
+            "StartUp"
+        ]
+    },
+    "Battle": {
+        "recognition": "OCR",
+        "expected": [
+            "战斗"
+        ],
+        "action": "Click",
+        "next": [
+            "InBattle"
+        ]
+    },
+    "InBattle": {
+        "recognition": "OCR",
+        "expected": [
+            "总伤害",
+            "新纪录"
+        ],
+        "next": [
+            "BattleOver",
+            "InBattle"
+        ]
+    },
+    "BattleOver": {
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭"
+        ],
+        "action": "Click",
+        "next": [
+            "BattleOver",
+            "Challenge",
+            "Challenged"
+        ]
+    }
+}

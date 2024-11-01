@@ -1,0 +1,120 @@
+{
+    "Award": {
+        "next": [
+            "AwardMenuBtn"
+        ],
+        "interrupt": [
+            "StartUp"
+        ]
+    },
+    "AwardMenuBtn": {
+        "recognition": "TemplateMatch",
+        "template": "Friend/MenuBtn.png",
+        "action": "Click",
+        "next": [
+            "TaskBtn"
+        ]
+    },
+    "TaskBtn": {
+        "recognition": "TemplateMatch",
+        "template": "Award/TaskBtn.png",
+        "action": "Click",
+        "next": [
+            "DailyBtn"
+        ]
+    },
+    "DailyBtn": {
+        "recognition": "OCR",
+        "expected": [
+            "每日任务"
+        ],
+        "post_delay": 1000,
+        "action": "Click",
+        "next": [
+            "CloseDailyPage",
+            "GetBtn",
+            "GetAllBtn",
+            "DailyAward",
+            "GongGuiBtn"
+        ]
+    },
+    "DailyAward": {
+        "recognition": "TemplateMatch",
+        "template": "Award/DailyAward.png",
+        "action": "Click",
+        "next": [
+            "CloseDailyPage",
+            "GetBtn",
+            "GetAllBtn",
+            "GongGuiBtn"
+        ]
+    },
+    "GongGuiBtn": {
+        "recognition": "OCR",
+        "expected": [
+            "公会任务"
+        ],
+        "post_delay": 1000,
+        "action": "Click",
+        "next": [
+            "CloseDailyPage",
+            "GetBtn",
+            "GetAllBtn",
+            "ChengZhangBtn"
+        ]
+    },
+    "ChengZhangBtn": {
+        "recognition": "OCR",
+        "expected": [
+            "成长之路"
+        ],
+        "post_delay": 1000,
+        "action": "Click",
+        "next": [
+            "CloseDailyPage",
+            "GetBtn",
+            "GetAllBtn",
+            "TiaoZhanBtn"
+        ]
+    },
+    "TiaoZhanBtn": {
+        "recognition": "OCR",
+        "expected": [
+            "成长挑战"
+        ],
+        "post_delay": 1000,
+        "action": "Click",
+        "next": [
+            "CloseDailyPage",
+            "GetBtn",
+            "GetAllBtn",
+            "StartUp"
+        ]
+    },
+    "GetAllBtn": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": [
+            "一键领取"
+        ],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "GetBtn": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "Award/GetBtn.png",
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "CloseDailyPage": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭",
+            "点击屏幕退出"
+        ],
+        "action": "Click",
+        "post_delay": 1000
+    }
+}

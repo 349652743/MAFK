@@ -1,0 +1,52 @@
+{
+    "Friend": {
+        "next": [
+            "MenuBtn"
+        ],
+        "interrupt": [
+            "StartUp"
+        ]
+    },
+    "MenuBtn": {
+        "recognition": "TemplateMatch",
+        "template": "Friend/MenuBtn.png",
+        "action": "Click",
+        "next": [
+            "FriendBtn"
+        ]
+    },
+    "FriendBtn": {
+        "recognition": "TemplateMatch",
+        "template": "Friend/FriendBtn.png",
+        "action": "Click",
+        "next": [
+            "GiftOverBtn",
+            "GiftBtn"
+        ]
+    },
+    "GiftBtn": {
+        "recognition": "TemplateMatch",
+        "template": "Friend/GiftBtn.png",
+        "action": "Click",
+        "next": [
+            "GiftOverBtn"
+        ]
+    },
+    "GiftOverBtn": {
+        "recognition": "TemplateMatch",
+        "template": "Friend/GiftOverBtn.png",
+        "action": "Click",
+        "next": [
+            "FriendAward",
+            "StartUp"
+        ]
+    },
+    "FriendAward": {
+        "recognition": "TemplateMatch",
+        "template": "Friend/FriendAward.png",
+        "action": "Click",
+        "next": [
+            "StartUp"
+        ]
+    }
+}
